@@ -17,6 +17,10 @@
     margin-right: 0 !important;
 }
 
+.home-active {
+    color: #DC136C !important;
+}
+
 .git-link{
     color: rgba(255, 255, 255, 0.842);
     font-weight: 600;
@@ -52,6 +56,83 @@
     font-weight: 400;
 }
 
+img {
+    border-radius: 50%;
+}
+
+.box {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    background: #1d101f;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    inset: 0px;
+    background: linear-gradient(315deg, #2CA58D, #DC136C);
+    transition: 0.5s;
+    animation: animate 2s linear infinite;
+}
+
+.box::hover::before {
+    inset: -20px 0px;
+}
+
+@keyframes animate {
+    1000% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    background: #1b0e1d;
+    transition: 0.5s;
+    animation: animate 2s linear infinite;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.content {
+    position: absolute;
+    inset: 20px;
+    border: 6px solid #271829;
+    z-index: 3;
+    border-radius: 50%;
+    object-fit: hidden;
+}
+
+
+.content img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* @keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2.4rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+} */
+
 .card {
     background-color: #1d101f;
     --bs-card-border-color:none;
@@ -60,6 +141,10 @@
 
     flex-basis: 40rem;
     margin-top: 1rem;
+}
+
+.card-footer {
+    padding: 1rem 0rem;
 }
 
 .card-text {
@@ -72,10 +157,6 @@
 .projects {
     display: flex;
     flex-direction: column;
-
-    /* max-width: 1120px; */
-    /* padding: 2rem 2rem; */
-    /* margin:auto; */
 } 
 
 .projects-cabeçalho {
